@@ -14,7 +14,21 @@ A personal labor of chaotic love — **Typhoon** is a finely merged and experime
 
 
 
+## 🧪 Live Integration
 
+Want to see Typhoon in action with a fully customized WebUI?
+
+Check out **CipherCore-SD-1.5-WebUI** — a clean, fast interface built around Typhoon as the default model:
+
+👉 [Raxephion/CipherCore-SD-1.5-WebUI](https://github.com/Raxephion/CipherCore-SD-1.5-WebUI)
+
+This repo includes:
+- Built-in Typhoon support
+- Optimized SD1.5 workflows
+- Clean UI with minimal overhead
+- Out-of-the-box settings tailored to the model
+- Optimised for CPU
+- Free for personal offline, local use
 
 
 
