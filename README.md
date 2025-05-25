@@ -6,6 +6,14 @@ A personal labor of chaotic love — **Typhoon** is a finely merged and experime
 
 ---
 
+[![Python](https://img.shields.io/badge/Python-3.10+-blue?logo=python&logoColor=white)](https://www.python.org/)
+[![GitHub Repo](https://img.shields.io/badge/GitHub-Raxephion/Typhoon--SD15--model-181717?logo=github)](https://github.com/Raxephion/Typhoon-SD15-model)
+[![Hugging Face](https://img.shields.io/badge/HuggingFace-Raxephion/Typhoon--SD1.5--V1-orange?logo=huggingface)](https://huggingface.co/Raxephion/Typhoon-SD1.5-V1)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
+[![Downloads](https://huggingface.co/datasets/huggingface/metrics/raw/main/images/downloads-sd.svg)](https://huggingface.co/Raxephion/Typhoon-SD1.5-V1)
+
+
+
 ## 🧠 About
 
 Typhoon started out simple — until it wasn’t. After multiple failed attempts (3 out of 4 training runs, to be exact) and renting GPUs for hours on end, what emerged was a model that holds up remarkably well in portrait and stylistic renders.
@@ -79,9 +87,10 @@ See the [LICENSE](./LICENSE) file for full details.
 
 ## 📍 Attribution
 
-- Base: Stable Diffusion 1.5 (v1-5-pruned-emaonly)
-- VAE: [stabilityai/sd-vae-ft-ema](https://huggingface.co/stabilityai/sd-vae-ft-ema)
-- LoRA analyzers: [GitHub](https://github.com/Raxephion)
+- Base: Stable Diffusion 1.5 (v1-5-pruned-emaonly)  
+- VAE: [stabilityai/sd-vae-ft-ema](https://huggingface.co/stabilityai/sd-vae-ft-ema)  
+- LoRA analyzers: [GitHub](https://github.com/Raxephion)  
+- Diffusers Repo: [Raxephion/Typhoon-SD1.5-V1](https://huggingface.co/Raxephion/Typhoon-SD1.5-V1) — for local inference, diffusers workflows, and serious tinkering
 
 ---
 
