@@ -1,0 +1,37 @@
+Typhoon - Model License (Based on CreativeML Open RAIL-M License)
+
+Custom Usage Terms:
+- You may use this model for personal and private use.
+- Do NOT merge this model with other checkpoints or LoRAs unless explicit permission is given.
+- Do NOT use this model on third-party generation services or commercial platforms without prior consent.
+- Redistribution of modified versions is prohibited unless authorized.
+- If you're unsure whether your use case falls within the above terms, please contact the author directly.
+
+---
+
+Below is the full CreativeML Open RAIL-M license the above terms are based on:
+
+CreativeML Open RAIL-M License
+
+Version 1.0
+
+You can find the full license text and attribution requirements at:
+https://huggingface.co/spaces/CompVis/stable-diffusion-license
+
+This model is distributed under the CreativeML Open RAIL-M license. The license allows for:
+- Use and reproduction of the model and outputs.
+- Modification for personal or research purposes.
+- Distribution under the same license, provided clear attribution is maintained.
+
+However, the license **restricts the following**:
+- Use in any way that violates applicable laws or regulations.
+- Generation or dissemination of harmful, unlawful, or abusive content.
+- Use in surveillance, facial recognition, or other ethically sensitive deployments.
+- Deployment on platforms where users can generate content without proper safety mechanisms.
+
+The authors and contributors of this model are not liable for any misuse or damages resulting from its use.
+
+For the full legal terms and definitions, see the CreativeML Open RAIL license:
+https://huggingface.co/spaces/CompVis/stable-diffusion-license
+
+Enjoy the storm.
