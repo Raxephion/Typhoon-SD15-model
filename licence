@@ -1,37 +1,44 @@
 Typhoon - Model License (Based on CreativeML Open RAIL-M License)
 
-Custom Usage Terms:
-- You may use this model for personal and private use.
-- Do NOT merge this model with other checkpoints or LoRAs unless explicit permission is given.
-- Do NOT use this model on third-party generation services or commercial platforms without prior consent.
-- Redistribution of modified versions is prohibited unless authorized.
-- If you're unsure whether your use case falls within the above terms, please contact the author directly.
+This model is distributed under the CreativeML OpenRAIL-M license, with the following additional restrictions and notes:
+
+ADDITIONAL CONDITIONS:
+
+1. This model is intended for **personal, private use only**.
+2. Do not upload this model to third-party image generation services or public inference sites **without express permission** from the creator.
+3. **Merging this model** with others or using it in merged checkpoints is **not allowed** — doing so will compromise its carefully tuned aesthetic and functionality.
+4. Redistribution of this model (in whole or part, modified or not) without permission is prohibited.
+
+COMMERCIAL LICENSE STATUS:
+
+The creator of this model holds a commercial license granted by Stability AI, which allows for free commercial use of Stability AI products and models up to $1,000,000 in annual revenue. This includes the legal use of the base Stable Diffusion model used in the creation of this finetuned version.
 
 ---
 
-Below is the full CreativeML Open RAIL-M license the above terms are based on:
+Below is the full text of the original CreativeML OpenRAIL-M license:
 
-CreativeML Open RAIL-M License
-
+CreativeML Open RAIL-M License  
 Version 1.0
 
-You can find the full license text and attribution requirements at:
-https://huggingface.co/spaces/CompVis/stable-diffusion-license
+This model is distributed under the RAIL license. The RAIL license places restrictions on certain use cases to prevent misuse while encouraging open and responsible AI development and deployment.
 
-This model is distributed under the CreativeML Open RAIL-M license. The license allows for:
-- Use and reproduction of the model and outputs.
-- Modification for personal or research purposes.
-- Distribution under the same license, provided clear attribution is maintained.
+**Permissions**:
+- You can use the model weights and model architecture for commercial and non-commercial purposes.
+- You can use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the model.
 
-However, the license **restricts the following**:
-- Use in any way that violates applicable laws or regulations.
-- Generation or dissemination of harmful, unlawful, or abusive content.
-- Use in surveillance, facial recognition, or other ethically sensitive deployments.
-- Deployment on platforms where users can generate content without proper safety mechanisms.
+**Conditions**:
+- You must include this license file in all copies or substantial portions of the model.
+- You must not use the model or its derivatives in any way that violates any applicable law or regulation or for any unlawful purpose.
 
-The authors and contributors of this model are not liable for any misuse or damages resulting from its use.
+**Limitations**:
+- The model is provided "as is", without warranty of any kind.
+- The authors and copyright holders shall not be held liable for any claim, damages, or other liability arising from the use of this model.
 
-For the full legal terms and definitions, see the CreativeML Open RAIL license:
-https://huggingface.co/spaces/CompVis/stable-diffusion-license
+**Additional Restrictions**:
+- You agree not to use the model for the purpose of exploiting or harming others, including but not limited to generating misleading information, harassment, or content that could cause social harm.
 
-Enjoy the storm.
+By using this model, you agree to the terms and conditions set forth in this license.
+
+---
+
+For more details, visit: https://huggingface.co/spaces/CompVis/stable-diffusion-license
