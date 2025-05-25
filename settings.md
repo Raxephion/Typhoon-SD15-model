@@ -1,50 +1,51 @@
-# ⚙️ Typhoon V1 - Recommended Generation Settings
+# ⚙️ Typhoon V1 – Recommended Settings
 
-These settings are tuned specifically for Typhoon V1 and will help ensure consistency and visual quality.
+Let’s keep this simple. If you want Typhoon to behave, follow the guide below. It’s not fussy, but it *is* particular.
 
 ---
 
-## 🔧 Base Generation Settings
+## 🧩 Base Generation
 
 - **Resolution**:  
-  - `512x768` or `576x768` recommended  
-  - Avoid 512x512 if you want better compositions
-
-- **Sampler**:  
-  - `DPM++ 2M Karras` (preferred)  
-  - Alternatives: `Euler` or `Euler A`
+  - 512x768 or 576x768 (sweet spots)  
+  - 512x512 technically works, but why settle?
 
 - **CFG Scale**:  
-  - 0.3 to 0.8 for best aesthetic fidelity  
-  - If unsure, use `7` as a default
+  - Between 0.3 – 0.8 (aim for 7 if in doubt)  
+  - Yes, *that low*. It helps with polish, not chaos.
+
+- **Sampler**:  
+  - DPM++ 2M Karras (recommended)  
+  - Euler or Euler A also work fine  
 
 ---
 
-## 🛠️ Hires Fix (Highly Recommended)
+## 🔨 Hires Fix (Just Use It)
 
-- **Enabled**: Yes  
-- **Denoising Strength**: `0.7`  
-- **Upscale Factor**: `2x`  
-- **Upscale Method**: `Latent`  
-- **CFG Scale (for Hires pass)**: `7`
+- **Enable it**: Always  
+- **Denoise**: 0.7  
+- **Upscale**: 2x  
+- **Method**: Latent  
+- **Hires CFG**: 7  
+
+Hires Fix smooths out weirdness. Without it, things get spicy in the wrong way.
 
 ---
 
-## 🖼️ VAE Settings
+## 🎨 VAE Stuff
 
 - Use `stabilityai/sd-vae-ft-ema`  
-  - This keeps saturation high and prevents muddy colors  
-- Or **omit VAE entirely** for the same visual results  
-- ⚠️ Do **not** use older `.bin` VAEs (they desaturate the output)
+  - Or no VAE at all (results are basically the same)  
+  - Avoid `.bin` VAEs like the plague—they desaturate everything and ruin the mood
 
 ---
 
-## ⚠️ Model-Specific Warnings
+## ⚠️ Known Quirks
 
-- Avoid high aspect ratios (e.g., 1024x512) — model trained on square crops  
-- Do **not merge** Typhoon with other models — this breaks its look  
-- Performance may vary wildly on third-party generation sites
+- Don’t go wide: high aspect ratios cause limb soup  
+- Do **not** merge this model. Ever. It’s fragile and not built for sharing DNA.  
+- Results on third-party generation sites may vary wildly (and not in a good way)  
 
 ---
 
-🎉 Use these settings and prompt tags as a starting point to get the most out of Typhoon V1!
+Use it well, and it’ll reward you. Abuse it, and the chaos gods will laugh.
