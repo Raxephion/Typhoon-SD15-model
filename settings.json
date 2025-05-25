@@ -1,0 +1,35 @@
+{
+  "model": "Typhoon V1",
+  "base_resolution": "512x768",
+  "alt_resolution": "576x768",
+  "cfg_scale": {
+    "min": 0.3,
+    "max": 0.8,
+    "default": 7
+  },
+  "samplers": [
+    "DPM++ 2M Karras",
+    "Euler",
+    "Euler A"
+  ],
+  "hires_fix": {
+    "enabled": true,
+    "denoising_strength": 0.7,
+    "upscale": 2,
+    "method": "Latent",
+    "cfg": 7
+  },
+  "vae": {
+    "recommended": "stabilityai/sd-vae-ft-ema",
+    "allow_none": true,
+    "avoid": [
+      ".bin VAEs"
+    ]
+  },
+  "warnings": {
+    "aspect_ratio": "Avoid wide outputs like 1024x512 – causes artifacts.",
+    "merging": "Do not merge with other models – aesthetic will break.",
+    "third_party": "Use on third-party sites may produce unexpected results."
+  },
+  "notes": "Typhoon prefers short, tag-based prompts. Don’t overthink it."
+}
