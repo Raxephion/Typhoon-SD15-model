@@ -1,68 +1,95 @@
-# 🌀 Typhoon V1 – Usage Guide
+# 🌀 Usage Guide for Typhoon V1
 
-Typhoon is a stylized, expressive SD 1.5-based model. While it works well out-of-the-box, here are the recommended settings to get the best out of it.
-
----
-
-## 🔧 Prompting Style
-
-- Typhoon responds **best to short, tag-like prompts**.
-- Natural language descriptions may result in less consistent results — this is due to the tagged nature of the training datasets.
-- Example:
-  - ✅ `"masterpiece, best quality, solo, dynamic angle, scenic background"`
-  - ❌ `"a photo of a person sitting alone in a beautiful field with dynamic lighting"`
+Typhoon V1 is a visually expressive, artistically biased model trained for creative, high-quality generations. This guide outlines how to get the best results out of it, whether you're using `.ckpt` or the `diffusers` version.
 
 ---
 
-## 🧠 CFG & Sampling Settings
+## 🧠 General Prompting Advice
 
-- **CFG Scale**: `0.3–0.8` recommended
-  - Best results found around `0.6–0.7`, but can vary
-- **Samplers**: Use "the usual suspects":
-  - `DPM++ 2M Karras` (preferred)
-  - `Euler` / `Euler A` also perform well
+Typhoon responds better to **shorter, tag-like prompts**, a byproduct of the way the training data was structured. Natural language prompts *can* work, but tags are more reliable.
 
----
+**Example:**
 
-## 🖼️ Resolution Tips
+`masterpiece, best quality, dramatic lighting, ultra-detailed, solo, medium shot, looking at viewer`
 
-- Base generation resolution:  
-  `576×768` (slightly less narrow than 512×768)  
-  - You *can* use 512×640 or 512×704 too, but narrow resolutions increase risk of anatomical glitches
-- **Hi-Res Fix is recommended**:
-  - `Upscale by`: 2  
-  - `Denoising strength`: 0.7  
-  - `Upscaler`: Latent  
-  - `Hi-res CFG`: 7  
-  - Regular CFG should match: `7`
-
-Note: While hires fix isn’t strictly post-processing, it’s used in all sample images. It improves detail and reduces artifacting.
+> Note: No trigger words are required.
 
 ---
 
-## 👁️ ADetailer & Face Restoration
+## 🛠 Base Settings
 
-- Not necessary in most cases
-- **Do NOT use ADetailer for close-ups** — it tends to ruin the high-quality eyes Typhoon already renders well
-- Only use face correction tools **when the output clearly struggles**
-
----
-
-## ⚠️ Caveats
-
-- **NSFW content**: The base model was NSFW-crippled. Typhoon tries, but results vary. Sometimes it works, sometimes it’s comically bad.
-- **VAE Note**: Images look significantly better with a proper VAE.
-  - Use the [official SD1.5 VAE](https://huggingface.co/stabilityai/sd-vae-ft-ema)
-  - Older or unknown VAEs may cause dull/desaturated outputs
+- **CFG**: `0.3` to `0.8` (try `7` for general use)
+- **Sampler**: `DPM++ 2M Karras`, `Euler`, or `Euler a`
+- **Base Resolution**: `512x768` (see resolution notes below)
+- **Hires Fix**: Highly recommended  
+  - Denoising strength: `0.7`  
+  - Upscale by: `2`  
+  - Upscaler: `Latent`  
+  - Hires CFG: `7`
 
 ---
 
-## 🚫 Do Not:
+## 🧾 Notes on Hires Fix
 
-- **Do not merge this model** with others — the architecture and LoRA merges are delicate and merging will likely break its aesthetic.
-- **Do not use this model on third-party generation sites** (e.g., CivitAI-hosted tools, AI hubs) unless permission is granted.
-- **Private use only** without explicit permission.
+Hires fix significantly improves anatomical consistency and detail, especially in complex compositions or full-body shots. Closeups, particularly of the eyes, are rendered with impressive clarity even without ADetailer or face restoration.
 
 ---
 
-*Enjoy the storm.*
+## 🖼 Resolution Notes
+
+The model was trained on datasets cropped to `512x512`. As a result:
+
+- Best base resolution: `512x768` (or `576x768` for slightly wider results)
+- Wider or more custom aspect ratios may introduce errors (extra limbs, fingers, etc.)
+- These limitations will be addressed in Typhoon V2
+
+---
+
+## 🧨 Using Diffusers (Hugging Face Transformers)
+
+Typhoon is available in `diffusers` format for Python-based workflows.
+
+👉 **[View on Hugging Face](https://huggingface.co/Raxephion/typhoon-v1-diffusers)**
+
+```python
+from diffusers import StableDiffusionPipeline
+import torch
+
+pipe = StableDiffusionPipeline.from_pretrained(
+    "Raxephion/typhoon-v1-diffusers", torch_dtype=torch.float16
+)
+pipe = pipe.to("cuda")
+
+prompt = "masterpiece, best quality, solo, dramatic lighting"
+image = pipe(prompt).images[0]
+image.show()
+```
+
+---
+
+## 🔍 VAE Info
+
+- Recommended: `vae-ft-ema` from [`stabilityai/sd-vae-ft-ema`](https://huggingface.co/stabilityai/sd-vae-ft-ema)
+- Using this or **no VAE at all** yields sharp, saturated results
+- Avoid old `.bin` VAE files (some may dull colors or desaturate the image)
+
+---
+
+## 🔒 Usage Restrictions
+
+Please **do not**:
+- Use this model on third-party generation websites
+- Merge it into other models
+- Re-upload or redistribute it under a different name
+
+**Why?**  
+Typhoon has a very specific aesthetic, balanced through a fragile process of finetuning and merging. Merging it will likely break its style and degrade performance.
+
+✅ You **can** use it freely for **private and personal** use.
+
+If you’d like to use it commercially, or in a public project, please contact me directly.
+
+---
+
+Enjoy the storm.  
+— **Raxephion**
