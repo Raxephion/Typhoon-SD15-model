@@ -10,7 +10,8 @@ A personal labor of chaotic love — **Typhoon** is a finely merged and experime
 [![GitHub Repo](https://img.shields.io/badge/GitHub-Raxephion/Typhoon--SD15--model-181717?logo=github)](https://github.com/Raxephion/Typhoon-SD15-model)
 [![Hugging Face](https://img.shields.io/badge/HuggingFace-Raxephion/Typhoon--SD1.5--V1-orange?logo=huggingface)](https://huggingface.co/Raxephion/Typhoon-SD1.5-V1)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
-[![HF Downloads](https://img.shields.io/huggingface/dynamic/dl/Raxephion/Typhoon-SD1.5-V1?label=Downloads&color=orange&logo=huggingface)](https://huggingface.co/Raxephion/Typhoon-SD1.5-V1)
+![HF Downloads](https://img.shields.io/badge/Downloads-1000%2B-orange?logo=huggingface)
+
 
 
 
