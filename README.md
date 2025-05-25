@@ -97,7 +97,6 @@ This model is provided under a modified CreativeML Open RAIL-M license:
 - ✅ Personal, private use is fine.
 - ❌ **Do not merge** this model with other checkpoints or LoRAs — it breaks the intended aesthetic and balance.
 - ❌ **Do not upload** this model to third-party generation sites or public bots.
-- ✅ You can request transformer links for local use via DM.
 
 See the [LICENSE](./LICENSE) file for full details.
 
