@@ -32,6 +32,12 @@ This repo includes:
 
 
 
+📷 Sample Images
+Sample images use hires fix as described above. No LoRAs were applied — what you see is what you get.
+
+<table> <tr> <td><img src="./images/00003.png" width="160"/></td> <td><img src="./images/00006.png" width="160"/></td> <td><img src="./images/00008.png" width="160"/></td> <td><img src="./images/00015.png" width="160"/></td> <td><img src="./images/00020.png" width="160"/></td> </tr> <tr> <td><img src="./images/00024.png" width="160"/></td> <td><img src="./images/00031.png" width="160"/></td> <td><img src="./images/00033.png" width="160"/></td> <td><img src="./images/00034.png" width="160"/></td> <td><img src="./images/00035.png" width="160"/></td> </tr> </table>
+
+
 ## 🧠 About
 
 Typhoon started out simple — until it wasn’t. After multiple failed attempts (3 out of 4 training runs, to be exact) and renting GPUs for hours on end, what emerged was a model that holds up remarkably well in portrait and stylistic renders.
