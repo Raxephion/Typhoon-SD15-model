@@ -47,7 +47,7 @@ It was trained using a mix of first-stage checkpoint finetuning followed by LoRA
 - [LoRA Strength Analyzer](https://github.com/Raxephion/loRA-Strength-Analyser)
 - [LoRA Epoch Analyzer](https://github.com/Raxephion/loRA-Epoch-Analyser)
 
-Both are in alpha. Math happens.
+Both are in beta. Math happens.
 
 ---
 
