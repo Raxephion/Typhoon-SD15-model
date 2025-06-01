@@ -2,7 +2,13 @@
 
 Ein chaotisches Liebesprojekt mit viel Herzblut — **Typhoon** ist ein fein abgestimmtes und experimentell trainiertes Stable Diffusion 1.5 Modell, das Charaktertreue, Gesichtsdetails und ein ganz bestimmtes ästhetisches Empfinden balanciert. Es wurde trainiert, zerstört, neu trainiert, zusammengeführt, auseinandergenommen, verflucht – und schließlich freigelassen. Jetzt dürft ihr es genießen.
 
-> _Hinweis: Dies ist die SD1.5-Version. Gleiche Seele, etwas launischer im Umgang._
+> _Hinweis: Dies ist die SD1.5-Version. Gleiche Seele, zwei Ausprägungen._
+
+---
+
+## 🆕 UPDATE: **Typhoon V2 jetzt verfügbar!**
+
+Typhoon V2 ist ab sofort erhältlich – mit deutlich größeren Datensätzen, verbessertem Prompt-Verständnis, besserer Anatomie und größeren Trainingsauflösungen. Siehe Details weiter unten.
 
 ---
 
@@ -45,7 +51,7 @@ Alle Bilder wurden mit aktivierter "hires fix"-Option erzeugt (wie oben beschrie
 
 Typhoon begann ganz harmlos — und eskalierte schnell. Nach mehreren gescheiterten Trainingsversuchen (3 von 4 Runs gingen baden) und etlichen Miet-GPU-Stunden entstand schließlich ein Modell, das sich in Portraits und stilisierten Renderings erstaunlich gut schlägt.
 
-Das Training erfolgte durch Finetuning des ersten Checkpoints, gefolgt von speziell angepasstem LoRA-Training. Diese LoRAs wurden anschließend sorgfältig zurück ins Basismodell gemerged – mit viel Trial & Error (und einem Taschenrechner). Zur Unterstützung dieses Chaos habe ich auch zwei Python-Tools entwickelt:
+Das Training erfolgte durch Finetuning des ersten Checkpoints, gefolgt von speziell angepasstem LoRA-Training. Diese LoRAs wurden anschließend sorgfältig zurück ins Basismodell gemerged – mit viel Trial & Error (und einem Taschenrechner). Zur Unterstützung dieses Chaos wurden auch eigene Analyse-Tools entwickelt:
 
 - [LoRA Strength Analyzer](https://github.com/Raxephion/loRA-Strength-Analyser)  
 - [LoRA Epoch Analyzer](https://github.com/Raxephion/loRA-Epoch-Analyser)
@@ -56,46 +62,57 @@ Beide befinden sich noch im Alpha-Stadium. Mathematik passiert.
 
 ## 🔧 Entwicklungs- & Trainingsnotizen
 
-- Das Finetuning-Dataset wurde auf **512x512** gecroppt – im Nachhinein betrachtet eher suboptimal.  
-- Wird in Version 2 mit größeren, seitenverhältnisfreundlichen Datensätzen korrigiert.  
-- Basis-Modell: **v1-5-pruned-emaonly.safetensors** (aka das letzte unverseuchte Vanilla-Modell nach der RunwayML-Bereinigung).  
-- VAE: Offizieller StabilityAI VAE – **dringend empfohlen**. Der alte hat alles irgendwie... vernebelt.
+### Typhoon V1
+- Trainingsdaten wurden auf **512x512** gecroppt – schnell, aber limitiert.  
+- Probleme mit Anatomie, Händen und schmalen Bildverhältnissen (z. B. 512x768) treten gelegentlich auf.  
+- Prompting funktioniert besser mit kurzen, tag-artigen Eingaben.  
+- Natürliche Sprache wird teilweise ignoriert oder inkonsistent umgesetzt.  
+
+### Typhoon V2
+- Deutlich größere Trainingsauflösungen: z. B. 576×832, 640×960  
+- Verbesserte Kompositionsvielfalt und Seitenverhältnisse  
+- Stärkere semantische Prompt-Adhärenz – auch bei natürlichsprachlicher Eingabe  
+- Anatomie, Hände und Detailtreue wurden deutlich verbessert  
+- Neues Tagging-System für ausgewogenere Ergebnisse
 
 ---
 
 ## 📐 Empfohlene Einstellungen
 
-Typhoon sieht schon ohne großes Tuning gut aus – aber hier sind meine bewährten Settings:
+Typhoon funktioniert mit vielen Samplern und Settings – hier die getesteten Empfehlungen:
 
-- **Auflösung:** 512x768 (oder etwas breiter, z. B. 576x768)  
-- **CFG Scale:** 7 (experimentell: 0.3–0.8 möglich)  
-- **Sampler:** DPM++ 2M (Karras), Euler oder Euler a – also die üblichen Verdächtigen  
-- **Hires Fix:**  
-  - Denoising Strength: **0.7**  
+- **Auflösung:**  
+  - V1: 512x768 oder 576x768 (mit Hires Fix)  
+  - V2: bis zu 640x960 nativ (auch ohne Hires Fix stabil)  
+- **CFG Scale:**  
+  - V1: 6.5–7  
+  - V2: 6 (etwas neutraler, stabiler bei höheren Steps)  
+- **Sampler:**  
+  - DPM++ 2M (Karras), Euler, Euler a  
+- **Hires Fix (nur falls nötig):**  
+  - Denoising Strength: **0.65–0.7**  
   - Upscale: **2x (Latent)**  
-  - CFG: **7**
-
-> Kein aDetailer oder Face-Restoration nötig – Portraits gelingen auch so erstaunlich gut, vor allem in Nahaufnahmen.
+  - CFG: gleich wie oben
 
 ---
 
 ## 🧠 Prompting-Tipps
 
-Typhoon reagiert besser auf **tag-artige Prompts** als auf natürlichsprachliche Eingaben. Wahrscheinlich, weil die Trainingsdaten so beschriftet waren. Kurz, sauber, effizient = beste Resultate.
+Typhoon V2 versteht Prompts deutlich besser als V1 – auch bei längeren oder natürlichsprachlichen Eingaben. Dennoch gilt:
 
----
-
-## 📷 Beispielbilder
-
-Siehe oben — alle ohne LoRAs, mit aktiviertem "hires fix".
+- Kurze, klare Prompts bringen konsistentere Resultate.  
+- Tags wie `"masterpiece, best quality, 1girl, solo"` wirken nach wie vor stark.  
+- Für V1: besser tag-basiert prompten  
+- Für V2: beides möglich – tags oder natürliche Sprache
 
 ---
 
 ## ⚠️ Einschränkungen
 
-- NSFW-Ergebnisse sind **Hit or Miss**, da das Basismodell teilweise entwaffnet wurde. Typhoon *versucht's*. Wenn's klappt, ist’s super – wenn nicht, merkst du’s sofort.  
-- Tag-lastiges Prompting > ausformulierte Sätze  
-- Die Anatomie-Fee hat gelegentlich Urlaub (aber wird besser)
+- V1: Anatomie-Fehler bei ungewöhnlichen Seitenverhältnissen möglich  
+- V1: Prompting inkonsistent bei langen Sätzen  
+- V2: Deutlich robuster, aber sehr komplexe Konzepte können vereinzelt noch vereinfacht werden  
+- Keine Merge-Freigabe – siehe Lizenz
 
 ---
 
