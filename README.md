@@ -2,7 +2,6 @@
 
 > **📢 UPDATE: Typhoon V2 has landed!**  
 > Now with proper 768px-native training, higher-res LoRAs, and fewer anatomical crimes.  
-> See [🌪️ Typhoon V2](#️typhoon-v2-sd15-768px-edition) below for full details.
 
 A personal labor of chaotic love — **Typhoon** is a finely merged and experimentally-trained Stable Diffusion 1.5 model, balancing character fidelity, facial detail, and a very specific aesthetic sensibility. It’s been trained, broken, retrained, merged, unmerged, cried over, and eventually released into the wild. Now you get to enjoy it.
 
