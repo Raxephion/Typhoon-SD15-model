@@ -1,18 +1,22 @@
 # 🌪️ Typhoon (SD1.5)
 
+> **📢 UPDATE: Typhoon V2 has landed!**  
+> Now with proper 768px-native training, higher-res LoRAs, and fewer anatomical crimes.  
+> See [🌪️ Typhoon V2](#️typhoon-v2-sd15-768px-edition) below for full details.
+
 A personal labor of chaotic love — **Typhoon** is a finely merged and experimentally-trained Stable Diffusion 1.5 model, balancing character fidelity, facial detail, and a very specific aesthetic sensibility. It’s been trained, broken, retrained, merged, unmerged, cried over, and eventually released into the wild. Now you get to enjoy it.
 
-> _Note: This is the SD1.5 version. Same soul, slightly more finicky temperament._
+> _Note: This is the SD1.5 version. Same soul, slightly different tempers across versions._
 
 ---
 
 [![Python](https://img.shields.io/badge/Python-3.10+-blue?logo=python&logoColor=white)](https://www.python.org/)
 [![GitHub Repo](https://img.shields.io/badge/GitHub-Raxephion/Typhoon--SD15--model-181717?logo=github)](https://github.com/Raxephion/Typhoon-SD15-model)
-[![Hugging Face](https://img.shields.io/badge/HuggingFace-Raxephion/Typhoon--SD1.5--V1-orange?logo=huggingface)](https://huggingface.co/Raxephion/Typhoon-SD1.5-V1)
+[![Hugging Face](https://img.shields.io/badge/HuggingFace-Raxephion/Typhoon--SD1.5--V1/V2-orange?logo=huggingface)](https://huggingface.co/Raxephion)
 ![HF Downloads](https://img.shields.io/badge/Downloads-100%2B-orange?logo=huggingface)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
 
-
+---
 
 ## 🧪 Live Integration
 
@@ -23,76 +27,105 @@ Check out **CipherCore-SD-1.5-WebUI** — a clean, fast interface built around T
 👉 [Raxephion/CipherCore-SD-1.5-WebUI](https://github.com/Raxephion/CipherCore-SD-1.5-WebUI)
 
 This repo includes:
-- Built-in Typhoon support
+- Built-in Typhoon support (all versions)
 - Optimized SD1.5 workflows
 - Clean UI with minimal overhead
 - Out-of-the-box settings tailored to the model
 - Optimised for CPU
 - Free for personal offline, local use
 
-
-
-📷 Sample Images
-Sample images use hires fix as described above. No LoRAs were applied — what you see is what you get.
-
-<table> <tr> <td><img src="./images/00003.png" width="160"/></td> <td><img src="./images/00006.png" width="160"/></td> <td><img src="./images/00008.png" width="160"/></td> <td><img src="./images/00015.png" width="160"/></td> <td><img src="./images/00020.png" width="160"/></td> </tr> <tr> <td><img src="./images/00024.png" width="160"/></td> <td><img src="./images/00031.png" width="160"/></td> <td><img src="./images/00033.png" width="160"/></td> <td><img src="./images/00034.png" width="160"/></td> <td><img src="./images/00035.png" width="160"/></td> </tr> </table>
-
+---
 
 ## 🧠 About
 
-Typhoon started out simple — until it wasn’t. After multiple failed attempts (3 out of 4 training runs, to be exact) and renting GPUs for hours on end, what emerged was a model that holds up remarkably well in portrait and stylistic renders.
+Typhoon started out simple — until it wasn’t. After multiple failed attempts (3 out of 4 training runs, to be exact) and renting GPUs for way too long, what finally emerged was a model that holds up remarkably well in portrait and stylistic renders.
 
-It was trained using a mix of first-stage checkpoint finetuning followed by LoRA training specifically crafted for this project. Those LoRAs were then carefully merged back into the base model using good old-fashioned trial and error (and a calculator). To help make sense of this merging process, I also developed a companion Python script:
+It was trained using a mix of:
+- First-stage full checkpoint finetuning
+- LoRA training specific to each aesthetic goal
+- Merging those LoRAs back in with… patience, math, and caffeine
+
+To help make sense of this beautiful mess, I also built two tools to analyze merge quality:
 
 - [LoRA Strength Analyzer](https://github.com/Raxephion/loRA-Strength-Analyser)
 - [LoRA Epoch Analyzer](https://github.com/Raxephion/loRA-Epoch-Analyser)
 
-Both are in beta. Math happens.
+They're in beta. Which means math happens, but sometimes weirdly.
 
 ---
 
-## 🔧 Development & Training Notes
+## 📦 Typhoon Versions
 
-- Finetuning dataset was cropped to **512x512** — a bit of a boo-boo in retrospect.
-- Will be corrected in V2 with larger, aspect-ratio-considerate image sets.
-- Base model: **v1-5-pruned-emaonly.safetensors** (aka, the last uncorrupted vanilla model I could still find post-RunwayML purge).
-- VAE: Official StabilityAI VAE used. Highly recommended. The old one made things… murky.
+### 🌪️ Typhoon V1
+
+- Trained on 512x512 crops (regret lives here)
+- Balanced, dreamy aesthetic with strong facial fidelity
+- Merged with multiple LoRAs designed for portraiture and detail
+- Performs surprisingly well across samplers and CFGs
+- Still great for tag-heavy prompting
+
+### 🌪️ Typhoon V2 (SD1.5, 768px Edition)
+
+> 📸 Same seed. Same settings. Noticeably sharper.
+
+Typhoon V2 is a full refresh:
+- ✅ **768px-native** training (finally!)
+- ✅ Entire dataset reprocessed, upscaled, and tagged better
+- ✅ Cleaner anatomy, facial symmetry, and light handling
+- ✅ Merged with new, high-res LoRAs trained from scratch
+- ✅ More reliable with consistency + stylized fidelity
+- ✅ Still tag-friendly — same prompting style applies
+
+It retains the soul of V1 — but with fewer oddities, stronger detail retention, and much better high-res handling. You can drop it into your current workflows and expect it to just… work better.
+
+V2 is now the **recommended default**.
 
 ---
 
 ## 📐 Recommended Settings
 
-Typhoon doesn’t need much to look good, but here are my tried-and-tested generation settings:
-
-- **Resolution:** 512x768 (or slightly broader, like 576x768)
-- **CFG Scale:** 7 (can range from 0.3–0.8 for experimental results)
-- **Sampler:** DPM++ 2M (Karras), Euler, or Euler a — the usual suspects
+### V1 Defaults
+- **Resolution:** 512x768 (or 576x768 for a slightly broader feel)
+- **CFG Scale:** 7 (experiment 0.3–0.8 for softer output)
+- **Sampler:** DPM++ 2M (Karras), Euler, or Euler a
 - **Hires Fix:**  
-  - Denoising Strength: **0.7**  
-  - Upscale: **2x (Latent)**  
-  - CFG: **7**
+  - Denoising: 0.7  
+  - Upscale: 2x (Latent)  
+  - CFG: 7
 
-> No aDetailer or face restoration needed for portraits. The model handles facial details very well — especially close-ups.
+> No aDetailer or face fix required. Model handles facial detail well.
+
+### V2 Adjustments (to be finalized in `settings.md`)
+- Same samplers and CFG work well
+- Hires fix denoising can drop to **0.5–0.6** for best edge retention
+- Native 768px input allows for better aspect ratios — 768x1152 or similar
 
 ---
 
-## 🧠 Prompting Tips
+## ✨ Prompting Tips
 
-Typhoon responds best to **tag-like prompts** over natural language. This is likely because training data was captioned that way. Short, efficient, clean tags = best results.
+Both versions of Typhoon respond best to **tag-like prompts** over natural language. The datasets were heavily captioned in this style, so stick to clean, concise tags for best results.
+
+Examples:
+- `masterpiece, 1girl, solo, detailed eyes, soft lighting, outdoors`
+- `portrait, close-up, shallow depth of field, 4k, photorealistic`
 
 ---
 
 ## 📷 Sample Images
 
-Sample images use hires fix as described above. No LoRAs were applied — what you see is what you get.
+Sample images below use hires fix as described.  
+**No LoRAs** applied — what you see is what the model outputs by default.
+
+<table> <tr> <td><img src="./images/00003.png" width="160"/></td> <td><img src="./images/00006.png" width="160"/></td> <td><img src="./images/00008.png" width="160"/></td> <td><img src="./images/00015.png" width="160"/></td> <td><img src="./images/00020.png" width="160"/></td> </tr> <tr> <td><img src="./images/00024.png" width="160"/></td> <td><img src="./images/00031.png" width="160"/></td> <td><img src="./images/00033.png" width="160"/></td> <td><img src="./images/00034.png" width="160"/></td> <td><img src="./images/00035.png" width="160"/></td> </tr> </table>
 
 ---
 
 ## ⚠️ Limitations
 
-- NSFW results are **hit and miss**, due to the base model being partially neutered. Typhoon tries. When it works, it works. When it doesn't — you’ll know.
-- Tag-heavy prompting works better than prose.
-- The anatomy fairy occasionally takes the day off (but is improving).
+- NSFW results are **hit or miss** — partially due to neutered base model. V2 fares better here, but no promises.
+- Tag-style prompting works best. Prose prompts may cause drift.
+- Anatomy isn't perfect. But it’s improving. The fairy visits more often now.
 
 ---
 
@@ -100,20 +133,20 @@ Sample images use hires fix as described above. No LoRAs were applied — what y
 
 This model is provided under a modified CreativeML Open RAIL-M license:
 
-- ✅ Personal, private use is fine.
-- ❌ **Do not merge** this model with other checkpoints or LoRAs — it breaks the intended aesthetic and balance.
-- ❌ **Do not upload** this model to third-party generation sites or public bots.
+- ✅ Personal, private use is allowed and encouraged.
+- ❌ **Do not merge** this model with other checkpoints or LoRAs — you’ll break the aesthetic.
+- ❌ **Do not upload** to public generation sites or bots.
 
-See the [LICENSE](./LICENSE) file for full details.
+See the [LICENSE](./LICENSE) file for the boring legal bit.
 
 ---
 
 ## 📍 Attribution
 
-- Base: Stable Diffusion 1.5 (v1-5-pruned-emaonly)  
+- Base: Stable Diffusion 1.5 (`v1-5-pruned-emaonly`)  
 - VAE: [stabilityai/sd-vae-ft-ema](https://huggingface.co/stabilityai/sd-vae-ft-ema)  
-- LoRA analyzers: [GitHub](https://github.com/Raxephion)  
-- Diffusers Repo: [Raxephion/Typhoon-SD1.5-V1](https://huggingface.co/Raxephion/Typhoon-SD1.5-V1) — for local inference, diffusers workflows, and serious tinkering
+- LoRA analyzers: [Raxephion Tools](https://github.com/Raxephion)  
+- Diffusers Repo: [Raxephion/Typhoon-SD1.5-V1](https://huggingface.co/Raxephion/Typhoon-SD1.5-V1)
 
 ---
 
