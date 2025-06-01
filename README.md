@@ -145,7 +145,8 @@ See the [LICENSE](./LICENSE) file for the boring legal bit.
 - Base: Stable Diffusion 1.5 (`v1-5-pruned-emaonly`)  
 - VAE: [stabilityai/sd-vae-ft-ema](https://huggingface.co/stabilityai/sd-vae-ft-ema)  
 - LoRA analyzers: [Raxephion Tools](https://github.com/Raxephion)  
-- Diffusers Repo: [Raxephion/Typhoon-SD1.5-V1](https://huggingface.co/Raxephion/Typhoon-SD1.5-V1)
+- Diffusers Repo V1: [Raxephion/Typhoon-SD1.5-V1](https://huggingface.co/Raxephion/Typhoon-SD1.5-V1)
+- Diffusers Repo V1: [Raxephion/Typhoon-SD1.5-V2](https://huggingface.co/Raxephion/Typhoon-SD15-V2)
 
 ---
 
