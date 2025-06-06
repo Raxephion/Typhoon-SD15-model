@@ -1,140 +1,153 @@
 # 🌪️ Typhoon (SD1.5)
 
-Ein chaotisches Liebesprojekt mit viel Herzblut — **Typhoon** ist ein fein abgestimmtes und experimentell trainiertes Stable Diffusion 1.5 Modell, das Charaktertreue, Gesichtsdetails und ein ganz bestimmtes ästhetisches Empfinden balanciert. Es wurde trainiert, zerstört, neu trainiert, zusammengeführt, auseinandergenommen, verflucht – und schließlich freigelassen. Jetzt dürft ihr es genießen.
+> **📢 UPDATE: Typhoon V2 ist gelandet!**  
+> Jetzt mit korrektem 768px-nativem Training, höherauflösenden LoRAs und weniger anatomischen Fehlgriffen.
 
-> _Hinweis: Dies ist die SD1.5-Version. Gleiche Seele, zwei Ausprägungen._
+Eine persönliche Liebesmüh der chaotischen Art – **Typhoon** ist ein fein abgestimmtes und experimentell trainiertes Stable Diffusion 1.5 Modell, das Charaktertreue, Gesichtsdetails und eine sehr spezifische ästhetische Sensibilität in Einklang bringt. Es wurde trainiert, kaputtgemacht, neu trainiert, zusammengeführt, wieder getrennt, beweint und schließlich in die Wildnis entlassen. Jetzt können Sie es genießen.
 
----
-
-## 🆕 UPDATE: **Typhoon V2 jetzt verfügbar!**
-
-Typhoon V2 ist ab sofort erhältlich – mit deutlich größeren Datensätzen, verbessertem Prompt-Verständnis, besserer Anatomie und größeren Trainingsauflösungen. Siehe Details weiter unten.
+> _Hinweis: Dies ist die SD1.5-Version. Die gleiche Seele, leicht unterschiedliche Temperamente über verschiedene Versionen hinweg._
 
 ---
 
-[![Python](https://img.shields.io/badge/Python-3.10+-blue?logo=python&logoColor=white)](https://www.python.org/)  
-[![GitHub Repo](https://img.shields.io/badge/GitHub-Raxephion/Typhoon--SD15--model-181717?logo=github)](https://github.com/Raxephion/Typhoon-SD15-model)  
-[![Hugging Face](https://img.shields.io/badge/HuggingFace-Raxephion/Typhoon--SD1.5--V1-orange?logo=huggingface)](https://huggingface.co/Raxephion/Typhoon-SD1.5-V1)  
-![HF Downloads](https://img.shields.io/badge/Downloads-100%2B-orange?logo=huggingface)  
+[![Python](https://img.shields.io/badge/Python-3.10+-blue?logo=python&logoColor=white)](https://www.python.org/)
+[![GitHub Repo](https://img.shields.io/badge/GitHub-Raxephion/Typhoon--SD15--model-181717?logo=github)](https://github.com/Raxephion/Typhoon-SD15-model)
+[![Hugging Face](https://img.shields.io/badge/HuggingFace-Raxephion/Typhoon--SD1.5--V1/V2-orange?logo=huggingface)](https://huggingface.co/Raxephion)
+![HF Downloads](https://img.shields.io/badge/Downloads-100%2B-orange?logo=huggingface)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
 
 ---
 
-## 🧪 Live-Integration
+## 🧪 Live Integration
 
-Du willst Typhoon direkt in Aktion sehen – mit einer voll ausgestatteten, optimierten WebUI?
+Möchten Sie Typhoon in Aktion mit einer vollständig angepassten WebUI sehen?
 
-Dann schau dir **CipherCore-SD-1.5-WebUI** an — eine schlanke, schnelle Oberfläche mit Typhoon als Standardmodell:
+Schauen Sie sich **CipherCore-SD-1.5-WebUI** an – eine saubere, schnelle Oberfläche, die um Typhoon als Standardmodell herum aufgebaut ist:
 
 👉 [Raxephion/CipherCore-SD-1.5-WebUI](https://github.com/Raxephion/CipherCore-SD-1.5-WebUI)
 
-Dieses Repository bietet dir:
-
-- Eingebaute Typhoon-Unterstützung  
-- Optimierte SD1.5-Workflows  
-- Sauberes UI ohne Ballast  
-- Voreinstellungen, die exakt aufs Modell abgestimmt sind  
-- Optimiert für CPU  
-- Kostenlos für den privaten Offline-/Lokalgebrauch
-
----
-
-## 📷 Beispielbilder
-
-Alle Bilder wurden mit aktivierter "hires fix"-Option erzeugt (wie oben beschrieben). Keine LoRAs verwendet – was du siehst, ist das, was du bekommst.
-
-<table> <tr> <td><img src="./images/00003.png" width="160"/></td> <td><img src="./images/00006.png" width="160"/></td> <td><img src="./images/00008.png" width="160"/></td> <td><img src="./images/00015.png" width="160"/></td> <td><img src="./images/00020.png" width="160"/></td> </tr> <tr> <td><img src="./images/00024.png" width="160"/></td> <td><img src="./images/00031.png" width="160"/></td> <td><img src="./images/00033.png" width="160"/></td> <td><img src="./images/00034.png" width="160"/></td> <td><img src="./images/00035.png" width="160"/></td> </tr> </table>
+Dieses Repo beinhaltet:
+- Eingebaute Typhoon-Unterstützung (alle Versionen)
+- Optimierte SD1.5-Workflows
+- Saubere UI mit minimalem Overhead
+- Out-of-the-Box-Einstellungen, die auf das Modell zugeschnitten sind
+- Optimiert für CPU
+- Kostenlos für den persönlichen Offline- und lokalen Gebrauch
 
 ---
 
-## 🧠 Über das Modell
+## 🧠 Über
 
-Typhoon begann ganz harmlos — und eskalierte schnell. Nach mehreren gescheiterten Trainingsversuchen (3 von 4 Runs gingen baden) und etlichen Miet-GPU-Stunden entstand schließlich ein Modell, das sich in Portraits und stilisierten Renderings erstaunlich gut schlägt.
+Typhoon fing einfach an – bis es das nicht mehr war. Nach mehreren gescheiterten Versuchen (3 von 4 Trainingsläufen, um genau zu sein) und dem viel zu langen Mieten von GPUs entstand schließlich ein Modell, das sich in Porträt- und stilistischen Renderings bemerkenswert gut behauptet.
 
-Das Training erfolgte durch Finetuning des ersten Checkpoints, gefolgt von speziell angepasstem LoRA-Training. Diese LoRAs wurden anschließend sorgfältig zurück ins Basismodell gemerged – mit viel Trial & Error (und einem Taschenrechner). Zur Unterstützung dieses Chaos wurden auch eigene Analyse-Tools entwickelt:
+Es wurde mit einer Mischung aus Folgendem trainiert:
+- Vollständiges Fine-Tuning des Checkpoints in der ersten Phase
+- LoRA-Training speziell für jedes ästhetische Ziel
+- Zusammenführen dieser LoRAs mit... Geduld, Mathematik und Koffein
 
-- [LoRA Strength Analyzer](https://github.com/Raxephion/loRA-Strength-Analyser)  
+Um dieses schöne Durcheinander zu verstehen, habe ich auch zwei Tools entwickelt, um die Zusammenführungsqualität zu analysieren:
+
+- [LoRA Strength Analyzer](https://github.com/Raxephion/loRA-Strength-Analyser)
 - [LoRA Epoch Analyzer](https://github.com/Raxephion/loRA-Epoch-Analyser)
 
-Beide befinden sich noch im Alpha-Stadium. Mathematik passiert.
+Sie sind in der Beta-Phase. Das bedeutet, dass Mathematik passiert, aber manchmal seltsam.
 
 ---
 
-## 🔧 Entwicklungs- & Trainingsnotizen
+## 📦 Typhoon-Versionen
 
-### Typhoon V1
-- Trainingsdaten wurden auf **512x512** gecroppt – schnell, aber limitiert.  
-- Probleme mit Anatomie, Händen und schmalen Bildverhältnissen (z. B. 512x768) treten gelegentlich auf.  
-- Prompting funktioniert besser mit kurzen, tag-artigen Eingaben.  
-- Natürliche Sprache wird teilweise ignoriert oder inkonsistent umgesetzt.  
+### 🌪️ Typhoon V1
 
-### Typhoon V2
-- Deutlich größere Trainingsauflösungen: z. B. 576×832, 640×960  
-- Verbesserte Kompositionsvielfalt und Seitenverhältnisse  
-- Stärkere semantische Prompt-Adhärenz – auch bei natürlichsprachlicher Eingabe  
-- Anatomie, Hände und Detailtreue wurden deutlich verbessert  
-- Neues Tagging-System für ausgewogenere Ergebnisse
+- Trainiert auf 512x512 Ausschnitten (Bedauern lebt hier)
+- Ausgewogene, verträumte Ästhetik mit starker Gesichtstreue
+- Zusammengeführt mit mehreren LoRAs, die für Porträtmalerei und Detailgenauigkeit entwickelt wurden
+- Funktioniert überraschend gut über Sampler und CFGs hinweg
+- Immer noch großartig für Tag-lastiges Prompting
+
+### 🌪️ Typhoon V2 (SD1.5, 768px Edition)
+
+> 📸 Gleicher Seed. Gleiche Einstellungen. Spürbar schärfer.
+
+Typhoon V2 ist eine vollständige Aktualisierung:
+- ✅ **768px-natives** Training (endlich!)
+- ✅ Das gesamte Dataset wurde neu verarbeitet, hochskaliert und besser getaggt
+- ✅ Sauberere Anatomie, Gesichtssymmetrie und Lichthandhabung
+- ✅ Zusammengeführt mit neuen, hochauflösenden LoRAs, die von Grund auf neu trainiert wurden
+- ✅ Zuverlässiger mit Konsistenz + stilisierter Wiedergabetreue
+- ✅ Immer noch Tag-freundlich – der gleiche Prompting-Stil gilt
+
+Es behält die Seele von V1 – aber mit weniger Eigenheiten, stärkerer Detailwiedergabe und viel besserer High-Res-Handhabung. Sie können es in Ihre aktuellen Workflows einfügen und erwarten, dass es einfach... besser funktioniert.
+
+V2 ist jetzt der **empfohlene Standard**.
 
 ---
 
 ## 📐 Empfohlene Einstellungen
 
-Typhoon funktioniert mit vielen Samplern und Settings – hier die getesteten Empfehlungen:
+### V1 Standardeinstellungen
+- **Auflösung:** 512x768 (oder 576x768 für ein etwas breiteres Gefühl)
+- **CFG-Skala:** 7 (experimentieren Sie mit 0,3–0,8 für eine weichere Ausgabe)
+- **Sampler:** DPM++ 2M (Karras), Euler oder Euler a
+- **Hires Fix:**
+  - Denoising: 0,7
+  - Upscale: 2x (Latent)
+  - CFG: 7
 
-- **Auflösung:**  
-  - V1: 512x768 oder 576x768 (mit Hires Fix)  
-  - V2: bis zu 640x960 nativ (auch ohne Hires Fix stabil)  
-- **CFG Scale:**  
-  - V1: 6.5–7  
-  - V2: 6 (etwas neutraler, stabiler bei höheren Steps)  
-- **Sampler:**  
-  - DPM++ 2M (Karras), Euler, Euler a  
-- **Hires Fix (nur falls nötig):**  
-  - Denoising Strength: **0.65–0.7**  
-  - Upscale: **2x (Latent)**  
-  - CFG: gleich wie oben
+> Kein aDetailer oder Face-Fix erforderlich. Das Modell verarbeitet Gesichtsdetails gut.
+
+### V2-Anpassungen (werden in `settings.md` fertiggestellt)
+- Gleiche Sampler und CFG funktionieren gut
+- Die Rauschunterdrückung mit Hires-Fix kann für die beste Kantenerhaltung auf **0,5–0,6** reduziert werden
+- Die native 768px-Eingabe ermöglicht bessere Seitenverhältnisse – 768x1152 oder ähnlich
 
 ---
 
-## 🧠 Prompting-Tipps
+## ✨ Prompting-Tipps
 
-Typhoon V2 versteht Prompts deutlich besser als V1 – auch bei längeren oder natürlichsprachlichen Eingaben. Dennoch gilt:
+Beide Versionen von Typhoon reagieren am besten auf **Tag-ähnliche Prompts** anstelle von natürlicher Sprache. Die Datensätze wurden stark in diesem Stil beschriftet, halten Sie sich also für beste Ergebnisse an saubere, prägnante Tags.
 
-- Kurze, klare Prompts bringen konsistentere Resultate.  
-- Tags wie `"masterpiece, best quality, 1girl, solo"` wirken nach wie vor stark.  
-- Für V1: besser tag-basiert prompten  
-- Für V2: beides möglich – tags oder natürliche Sprache
+Beispiele:
+- `Meisterwerk, 1Mädchen, Solo, detaillierte Augen, weiche Beleuchtung, im Freien`
+- `Porträt, Nahaufnahme, geringe Schärfentiefe, 4k, fotorealistisch`
+
+---
+
+## 📷 Beispielbilder
+
+Die Beispielbilder unten verwenden den beschriebenen Hires-Fix.  
+**Keine LoRAs** angewendet – was Sie sehen, ist das, was das Modell standardmäßig ausgibt.
+
+<table> <tr> <td><img src="./images/00003.png" width="160"/></td> <td><img src="./images/00006.png" width="160"/></td> <td><img src="./images/00008.png" width="160"/></td> <td><img src="./images/00015.png" width="160"/></td> <td><img src="./images/00020.png" width="160"/></td> </tr> <tr> <td><img src="./images/00024.png" width="160"/></td> <td><img src="./images/00031.png" width="160"/></td> <td><img src="./images/00033.png" width="160"/></td> <td><img src="./images/00034.png" width="160"/></td> <td><img src="./images/00035.png" width="160"/></td> </tr> </table>
 
 ---
 
 ## ⚠️ Einschränkungen
 
-- V1: Anatomie-Fehler bei ungewöhnlichen Seitenverhältnissen möglich  
-- V1: Prompting inkonsistent bei langen Sätzen  
-- V2: Deutlich robuster, aber sehr komplexe Konzepte können vereinzelt noch vereinfacht werden  
-- Keine Merge-Freigabe – siehe Lizenz
+- NSFW-Ergebnisse sind **Glückssache** – teilweise aufgrund des kastrierten Basismodells. V2 schneidet hier besser ab, aber keine Versprechungen.
+- Tag-Style-Prompting funktioniert am besten. Prosaprompts können zu Abweichungen führen.
+- Die Anatomie ist nicht perfekt. Aber es wird besser. Die Fee besucht jetzt öfter.
 
 ---
 
 ## 🚫 Nutzungsbeschränkungen
 
-Dieses Modell wird unter einer modifizierten CreativeML Open RAIL-M Lizenz bereitgestellt:
+Dieses Modell wird unter einer modifizierten CreativeML Open RAIL-M-Lizenz bereitgestellt:
 
-- ✅ Persönliche, private Nutzung ist erlaubt.  
-- ❌ **Keine Merges** mit anderen Checkpoints oder LoRAs – das ruiniert die beabsichtigte Ästhetik und Balance.  
-- ❌ **Nicht hochladen** auf Drittanbieter-Plattformen oder öffentliche Bots.
+- ✅ Persönliche, private Nutzung ist erlaubt und erwünscht.
+- ❌ **Führen Sie dieses Modell nicht** mit anderen Checkpoints oder LoRAs **zusammen** – Sie werden die Ästhetik zerstören.
+- ❌ **Laden Sie es nicht** auf öffentliche Generierungsseiten oder Bots **hoch**.
 
-Alle Details findest du in der [LICENSE](./LICENSE).
-
----
-
-## 📍 Attribution
-
-- Basis: Stable Diffusion 1.5 (v1-5-pruned-emaonly)  
-- VAE: [stabilityai/sd-vae-ft-ema](https://huggingface.co/stabilityai/sd-vae-ft-ema)  
-- LoRA-Analysetools: [GitHub](https://github.com/Raxephion)  
-- Diffusers-Workflow: [Raxephion/Typhoon-SD1.5-V1](https://huggingface.co/Raxephion/Typhoon-SD1.5-V1) – für lokale Inferenz, Experimente und ernsthaftes Basteln
+Die langweiligen juristischen Details finden Sie in der [LICENSE](./LICENSE)-Datei.
 
 ---
 
-### 🌩️ Viel Spaß im Sturm.
+## 📍 Namensnennung
+
+- Basis: Stable Diffusion 1.5 (`v1-5-pruned-emaonly`)
+- VAE: [stabilityai/sd-vae-ft-ema](https://huggingface.co/stabilityai/sd-vae-ft-ema)
+- LoRA-Analysatoren: [Raxephion Tools](https://github.com/Raxephion)
+- Diffusers Repo V1: [Raxephion/Typhoon-SD1.5-V1](https://huggingface.co/Raxephion/Typhoon-SD1.5-V1)
+- Diffusers Repo V1: [Raxephion/Typhoon-SD1.5-V2](https://huggingface.co/Raxephion/Typhoon-SD15-V2)
+
+---
+
+### 🌩️ Genießen Sie den Sturm.
